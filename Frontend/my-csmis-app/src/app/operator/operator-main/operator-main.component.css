@@ -1,0 +1,8 @@
+.sidenav {
+  transition: transform 0.3s ease;
+  transform: translateX(-100%); /* Hide sidebar initially */
+}
+
+.sidenav.open {
+  transform: translateX(0); /* Show sidebar when open */
+}

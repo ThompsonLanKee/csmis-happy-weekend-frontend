@@ -1,0 +1,163 @@
+<!-- <div class="vh-100 main">
+  <app-admin-sidebar></app-admin-sidebar>
+<app-navbar></app-navbar>
+<div class="container m-auto w-60">
+  <h4>Add New User Form</h4>
+  <form [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="staff_ID">Staff ID:</label>
+      <input type="text" id="staff_ID" formControlName="staff_ID" required>
+    </div>
+
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" required>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" required>
+    </div>
+
+    <div>
+      <label for="division">Division:</label>
+      <select id="division" formControlName="division" [(ngModel)]="selectedDivisionId" (change)="onDivisionChange()" required>
+        <option value="" disabled>Select Division</option>
+        <option *ngFor="let division of divisions" [value]="division.id">{{ division.name }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="department">Department:</label>
+      <select id="department" formControlName="department" [(ngModel)]="selectedDepartmentId" (change)="onDepartmentChange()" required>
+        <option value="" disabled>Select Department</option>
+        <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="team">Team:</label>
+      <select id="team" formControlName="team" [(ngModel)]="selectedTeamId" required>
+        <option value="" disabled>Select Team</option>
+        <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="joined_at">Joined At:</label>
+      <input type="date" id="joined_at" formControlName="joined_at" required>
+    </div>
+
+    <button type="submit" [disabled]="addEmployeeForm.invalid">Add Employee</button>
+  </form>
+</div>
+</div> -->
+
+<div class="vh-100 main">
+  <app-admin-sidebar></app-admin-sidebar>
+  <app-navbar></app-navbar>
+  <div class="container m-auto w-50">
+    <h6>Add New Employee Form</h6>
+    <form class="" [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()">
+      <table>
+        <tr>
+          <td>
+            <div class="d-flex justify-content-between">
+              <div>
+                <label for="staff_ID">Staff ID:</label>
+                <input type="text" id="staff_ID" formControlName="staff_ID" required>
+                <div *ngIf="addEmployeeForm.get('staff_ID')?.invalid && addEmployeeForm.get('staff_ID')?.touched">
+                  <small *ngIf="addEmployeeForm.get('staff_ID')?.errors?.['required']">Staff ID is required.</small>
+                  <small *ngIf="addEmployeeForm.get('staff_ID')?.errors?.['maxlength']">Staff ID cannot exceed 50 characters.</small>
+                </div>
+              </div>
+              <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" formControlName="name" required>
+                <div *ngIf="addEmployeeForm.get('name')?.invalid && addEmployeeForm.get('name')?.touched">
+                  <small *ngIf="addEmployeeForm.get('name')?.errors?.['required']">Name is required.</small>
+                  <small *ngIf="addEmployeeForm.get('name')?.errors?.['maxlength']">Name cannot exceed 100 characters.</small>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex justify-content-between">
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" formControlName="email" required>
+              <div *ngIf="addEmployeeForm.get('email')?.invalid && addEmployeeForm.get('email')?.touched">
+                <small *ngIf="addEmployeeForm.get('email')?.errors?.['required']">Email is required.</small>
+                <small *ngIf="addEmployeeForm.get('email')?.errors?.['email']">Email is invalid.</small>
+              </div>
+            </div>
+            <div>
+              <label for="division">Division:</label>
+              <select id="division" formControlName="division" [(ngModel)]="selectedDivisionId" (change)="onDivisionChange()" required>
+                <option value="" disabled>Select Division</option>
+                <option *ngFor="let division of divisions" [value]="division.id">{{ division.name }}</option>
+              </select>
+            </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex justify-content-between">
+              <div>
+                <label for="department">Department:</label>
+                <select id="department" formControlName="department" [(ngModel)]="selectedDepartmentId" (change)="onDepartmentChange()" required>
+                  <option value="" disabled>Select Department</option>
+                  <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
+                </select>
+                <div *ngIf="addEmployeeForm.get('department')?.hasError('departmentRequired') && addEmployeeForm.get('department')?.touched">
+                  <small>Department selection is required after choosing a division.</small>
+                </div>
+                </div>
+
+                <div>
+                  <label for="team">Team:</label>
+                  <select id="team" formControlName="team" [(ngModel)]="selectedTeamId" required>
+                    <option value="" disabled>Select Team</option>
+                    <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+                  </select>
+                  <div *ngIf="addEmployeeForm.get('team')?.hasError('teamRequired') && addEmployeeForm.get('team')?.touched">
+                    <small>Team selection is required after choosing a department.</small>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="join">
+              <label for="joined_at">Joined At:</label>
+              <input type="date" id="joined_at" formControlName="joined_at" required>
+              <div *ngIf="addEmployeeForm.get('joined_at')?.invalid && addEmployeeForm.get('joined_at')?.touched">
+                <small *ngIf="addEmployeeForm.get('joined_at')?.errors?.['required']">Join date is required.</small>
+                <small *ngIf="addEmployeeForm.get('joined_at')?.errors?.['futureDate']">Join date cannot be in the future.</small>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="submit" [disabled]="addEmployeeForm.invalid">Add Employee</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+

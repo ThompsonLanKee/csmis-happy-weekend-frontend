@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0;
+      font-family: Roboto, "Helvetica Neue", sans-serif;
+      color: #369!important;
+}
+
+.nav-item .nav-link.active .icon{
+  background-image: linear-gradient(310deg, #fc3, #fc3)!important;
+}
+.employee-drop{
+  margin-top: 0!important;
+}
+
+/* Custom styles for the dropdown menu */
+.nav-item.dropdown .dropdown-menu {
+  margin-top: 0; /* Remove top margin */
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem; /* Adjust padding for items */
+  line-height: 1.5; /* Control line height */
+}
+
+.navbar-vertical.navbar-expand-xs.fixed-start{
+  /* background-color: rgb(158, 198, 238);
+  border-color: rgb(158, 198, 238); */
+}
+i{
+  color: #fc3;
+  font-size: 22px!important;
+}
+
+@media (min-width: 992px) {
+  .dropdown:not(.dropdown-hover) .dropdown-menu {
+      margin-top: 0px !important;
+  }
+}
+
+.main{
+  background-color:rgb(160, 184, 209);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

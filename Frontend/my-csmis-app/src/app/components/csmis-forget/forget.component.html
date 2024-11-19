@@ -1,0 +1,75 @@
+<h1></h1>
+<div class="forgot-password-container">
+  <h2>Forgot Password</h2>
+  <!-- <div *ngIf="!emailSent">
+  <form (ngSubmit)="onSubmit(forgotPasswordForm)" #forgotPasswordForm="ngForm">
+    <div class="form-group">
+      <label for="email">Enter your email address:</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        name="email"
+        ngModel
+        required
+        email
+        #email="ngModel"
+        placeholder="example@domain.com"
+        required
+      />
+      <div *ngIf="email.invalid && email.touched" class="error">
+        <small *ngIf="email.errors?.['required']">Email is required.</small>
+        <small *ngIf="email.errors?.['email']">Please enter a valid email.</small>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="forgotPasswordForm.invalid">Send OTP</button>
+  </form>
+  </div> -->
+
+
+    <div *ngIf="!emailSent">
+      <!-- Email form for sending OTP -->
+      <form #forgotPasswordForm="ngForm" (ngSubmit)="onSubmit(forgotPasswordForm)">
+        <label for="email">Enter your email address:</label>
+        <input type="email" id="email" name="email" ngModel required />
+        <button class="btn btn-primary" type="submit">Send OTP</button>
+      </form>
+    </div>
+
+    <div *ngIf="otpSent && !otpVerified">
+      <!-- OTP form for verifying OTP -->
+      <p>An OTP has been sent to your email. Please enter it below:</p>
+
+      <div *ngIf="!otpExpired">
+        <label for="otpCode">Enter OTP</label>
+        <input type="text" id="otpCode" [(ngModel)]="otpCode" required/>
+
+        <button (click)="verifyOtp()" class="btn btn-primary">Verify OTP</button>
+
+        <!-- Display countdown timer in MM:SS format -->
+        <p *ngIf="timeRemaining > 0">Time remaining: {{ formatTime() }}</p>
+
+        <!-- Resend OTP option (show if OTP has expired) -->
+        <button (click)="resendOtp()" [disabled]="!otpExpired" class="btn btn-primary">Resend OTP</button>
+      </div>
+
+      <!-- Message if OTP expired -->
+      <div *ngIf="otpExpired">
+        <p style="color: red;">OTP expired. Please resend OTP.</p>
+        <button (click)="resendOtp()" class="btn btn-primary">Resend OTP</button>
+      </div>
+    </div>
+
+    <!-- Error message -->
+    <div *ngIf="errorMessage">
+      <p style="color: red;">{{ errorMessage }}</p>
+    </div>
+
+    <!-- Message for successful login after OTP verification -->
+    <div *ngIf="otpVerified">
+      <p>OTP verified! You are now logged in.</p>
+    </div>
+    </div>
+
+
+

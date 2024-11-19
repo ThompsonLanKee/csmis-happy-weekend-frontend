@@ -1,0 +1,65 @@
+.container{
+  margin-top: 30px;
+}
+h4{
+  -webkit-text-stroke: 1px #369;
+  font-weight: 900;
+  color:darkblue;
+}
+small{
+color: red;
+}
+form{
+  margin: 0 auto 100px;
+  text-align: center;
+}
+table{
+  padding: 0;
+  margin: 0;
+}
+label{
+  font-size: 20px;
+  margin-right: 20px;
+}
+input{
+  border:none;
+  border-bottom: 2px;
+  border-color: #369;
+  width: 95%;
+  height: 3rem;
+  font-size: 20px;
+  outline: none;
+  border-radius: 1opx;
+  padding-bottom: 10px;
+}
+select{
+  outline: none;
+  width: 100%;
+  height: 3rem;
+}
+tr{
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+tr td div{
+padding-top: 10px;
+}
+.join{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  width:100%;
+}
+#joined_at{
+
+}
+button{
+  color: #369;
+  size: 20px;
+  background-color: #fc3;
+  border-radius: 20px;
+  width: 20%;
+  height: 40px;
+}
+

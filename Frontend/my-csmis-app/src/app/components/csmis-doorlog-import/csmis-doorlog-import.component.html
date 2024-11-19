@@ -1,0 +1,19 @@
+<div class="vh-100 main">
+  <app-admin-sidebar></app-admin-sidebar>
+  <app-navbar></app-navbar>
+
+  <div class="forgot-password-container">
+    <div *ngIf="isUploading">
+      <p>Uploading... {{ uploadProgress }}%</p>
+      <mat-progress-bar mode="determinate" [value]="uploadProgress"></mat-progress-bar>
+    </div>
+
+    <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+      <input type="file" formControlName="file" (change)="onFileSelected($event)" required />
+      <button type="submit" [disabled]="isUploading">Upload</button>
+    </form>
+  </div>
+</div>
+
+
+

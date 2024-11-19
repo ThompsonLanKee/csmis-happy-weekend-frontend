@@ -1,0 +1,17 @@
+
+.sidenav-toggler-inner{
+    display: block!important;
+  }
+  i{
+    color: #369;
+  }
+.signin{
+  font-size: 20px!important;
+  font-weight: 500!important;
+  color:#369;
+}
+.loginout{
+  font-size: 20px!important;
+  font-weight: 300!important;
+  color:#369;
+}

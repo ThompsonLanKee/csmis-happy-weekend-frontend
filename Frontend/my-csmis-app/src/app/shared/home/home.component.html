@@ -1,0 +1,123 @@
+<!-- <app-header></app-header> -->
+	<div>
+		<div class="wrapper bgded overlay" [style.background-image]="'url(' +backgroundUrl+ ')'">
+    <div id="pageintro" class="hoc clear">
+    </div>
+  </div>
+  <div class="wrapper row3">
+    <main class="hoc container clear">
+    <section>
+        <div class="sectiontitle">
+          <h6 class="heading">CheatSheets By Section</h6>
+          <p>Create Your Own CheatSheet By Type of Section</p>
+        </div>
+        <ul class="nospace group overview">
+        <div *ngFor="let sec of sections">
+          <li class="one_third">
+            <figure><a href="#"><img src="resources/images/demo/348x261.png" alt=""></a>
+              <figcaption>
+                <h6 class="heading">{{sec.sbname}}</h6>
+              </figcaption>
+            </figure>
+          </li>
+        </div>
+        </ul>
+      </section>
+
+      <hr class="btmspace-80">
+      <section id="introblocks">
+				<div class="sectiontitle">
+					<h6 class="heading">All CheatSheets</h6>
+					<!-- <p>Vitae porta purus hendrerit mauris elementum nibh et placerat</p> -->
+				</div>
+				<div class="alert-danger">{{message}}</div>
+				<ul class="nospace group d-flex justify-content-between">
+					<div *ngFor="let cheatsheet of Cheatsheets">
+						<li class="one_third first" [style.background-color]="cheatsheet.color">
+							<article>
+								<h6 class="heading">{{cheatsheet.cname }}</h6>
+								<p>{{cheatsheet.description }}</p>
+								<footer>
+									<a class="btn" href="#">Read More</a>
+								</footer>
+							</article>
+						</li>
+					</div>
+				</ul>
+			</section>
+      <!-- / main body -->
+      <div class="clear"></div>
+    </main>
+  </div>
+  <div class="wrapper coloured">
+    <article class="hoc cta clear">
+      <h6 class="three_quarter first">Dis parturient montes nascetur ridiculus mus vivamus</h6>
+      <footer class="one_quarter"><a class="btn" href="#">Porta risus purus</a></footer>
+    </article>
+  </div>
+  <div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+      <div class="one_quarter first">
+        <h6 class="heading">Nulla ullamcorper</h6>
+        <ul class="nospace btmspace-30 linklist contact">
+          <li><i class="fas fa-map-marker-alt"></i>
+            <address>
+              Street Name &amp; Number, Town, Postcode/Zip
+            </address>
+          </li>
+          <li><i class="fas fa-phone"></i> +00 (123) 456 7890</li>
+          <li><i class="far fa-envelope"></i> infodomain.com</li>
+        </ul>
+        <ul class="faico clear">
+          <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="faicon-dribble" href="#"><i class="fab fa-dribbble"></i></a></li>
+          <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+      <div class="one_quarter">
+        <h6 class="heading">Dignissim nibh ut</h6>
+        <ul class="nospace linklist">
+          <li><a href="#">Natoque penatibus et magnis</a></li>
+          <li><a href="#">Dis parturient montes</a></li>
+          <li><a href="#">Nascetur ridiculus mus</a></li>
+          <li><a href="#">Vestibulum tincidunt nisi</a></li>
+          <li><a href="#">Sed eleifend scelerisque</a></li>
+        </ul>
+      </div>
+      <div class="one_quarter">
+        <h6 class="heading">Vestibulum cras placerat</h6>
+        <ul class="nospace linklist">
+          <li><a href="#">Maecenas vestibulum molestie</a></li>
+          <li><a href="#">Arcu cras sed tincidunt</a></li>
+          <li><a href="#">Enim maecenas sed mi dictum</a></li>
+          <li><a href="#">Dolor laoreet fringilla</a></li>
+          <li><a href="#">Augue curabitur lobortis</a></li>
+        </ul>
+      </div>
+      <div class="one_quarter">
+        <h6 class="heading">Vulputate cum sociis</h6>
+        <p class="nospace btmspace-15">Diam nulla id condimentum magna scelerisque ac suspendisse viverra est purus.</p>
+        <form method="post" action="#">
+          <fieldset>
+            <legend>Newsletter:</legend>
+            <input class="btmspace-15" type="text" value="" placeholder="Name">
+            <input class="btmspace-15" type="text" value="" placeholder="Email">
+            <button type="submit" value="submit">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+    </footer>
+  </div>
+  <div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+      <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+      <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/"
+          title="Free Website Templates">OS Templates</a></p>
+    </div>
+  </div>
+  <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+  <!-- <script src="resources/layout/scripts/jquery.min.js"></script>
+  <script src="resources/layout/scripts/jquery.backtotop.js"></script>
+  <script src="resources/layout/scripts/jquery.mobilemenu.js"></script> -->
+	</div>

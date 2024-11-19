@@ -1,0 +1,36 @@
+<div class="login-wrapper">
+    <div class="login-container">
+      <div class="login-left">
+        <h3>Log in</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <!-- Staff ID Input -->
+          <div class="input-group">
+            <fa-icon [icon]="faUser" class="icon"></fa-icon>
+            <input type="text" formControlName="staffId" placeholder="User ID" required />
+          </div>
+          <div *ngIf="staffId?.invalid && staffId?.touched" class="error">
+            <small *ngIf="staffId?.hasError('required')">Staff ID is required.</small>
+            <small *ngIf="staffId?.hasError('pattern')">Staff ID must be numeric.</small>
+          </div>
+        
+          <!-- Password Input -->
+          <div class="input-group">
+            <fa-icon [icon]="faLock" class="icon"></fa-icon>
+            <input type="password" formControlName="password" placeholder="Password" required />
+          </div>
+          <div *ngIf="password?.invalid && password?.touched" class="error">
+            <small *ngIf="password?.hasError('required')">Password is required.</small>
+            <small *ngIf="password?.hasError('minlength')">Password must be at least 6 characters long.</small>
+          </div>
+        
+          <button type="submit" class="login-button" [disabled]="loginForm.invalid">Log in</button>
+          <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        </form>
+      </div>
+      <div class="login-right">
+        <img class="img-fluid sidebar-logo" src="https://www.diracetechnology.com/wp-content/themes/dat/assets/images/DAT%20Logo.png" alt="Logo">
+        <p class="cs">Catering Service</p>
+      </div>
+    </div>
+  </div>
+  

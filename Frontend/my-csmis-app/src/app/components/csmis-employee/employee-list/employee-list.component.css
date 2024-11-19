@@ -1,0 +1,32 @@
+.mat-elevation-z8 {
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+mat-table {
+  width: 100%;
+}
+
+mat-header-cell {
+  font-weight: bold;
+}
+
+button {
+  margin: 5px;
+  padding: 5px 10px;
+}
+table{
+  font-size:15px;
+  color: #369;
+  background-color: aliceblue;
+}
+table td{
+  font-size: 15px;
+}
+.dt-layout-row{
+  font-size: 20px!important;
+}
+label{
+  font-size: 20px!important;
+}
