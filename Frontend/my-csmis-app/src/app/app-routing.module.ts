@@ -11,6 +11,7 @@ import { CsmisDoorlogImportComponent } from './components/csmis-doorlog-import/c
 import { LoginComponent } from './components/login/login.component';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
 import { RoleGuard } from './guards/role-guard.guard';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 
 // const routes: Routes = [
@@ -78,6 +79,8 @@ import { RoleGuard } from './guards/role-guard.guard';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'change-password', component: ChangePasswordComponent, canActivate: [RoleGuard], data: { role: 'OPERATOR' }},
+  
   { path: 'unauthorized', component: UnauthorizedComponent },
   { path: 'profile', component: AdminMainComponent},
  

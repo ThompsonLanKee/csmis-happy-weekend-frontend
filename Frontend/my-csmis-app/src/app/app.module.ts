@@ -42,6 +42,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './components/login/login.component';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     UpdateEmployeeComponent,
     AddDivisionComponent,
     LoginComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,

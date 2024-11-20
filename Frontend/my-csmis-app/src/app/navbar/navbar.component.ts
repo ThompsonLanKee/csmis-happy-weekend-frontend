@@ -9,7 +9,13 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  constructor(private sidebarToggleService: SidebarToggleService,private authService:AuthenticationService,private router:Router) {}
+  userid: number = 0;
+  constructor(private sidebarToggleService: SidebarToggleService,private authService:AuthenticationService,private router:Router,) {}
+
+  ngOnInit(): void{
+    this.userid = this.authService.getUserId() || 0;
+  }
+
 
   onToggleSidebar() {
     console.log('Toggle button clicked');
