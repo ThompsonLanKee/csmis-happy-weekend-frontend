@@ -80,7 +80,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'change-password', component: ChangePasswordComponent, canActivate: [RoleGuard], data: { role: 'OPERATOR' }},
-  
+
   { path: 'unauthorized', component: UnauthorizedComponent },
   { path: 'profile', component: AdminMainComponent},
 
