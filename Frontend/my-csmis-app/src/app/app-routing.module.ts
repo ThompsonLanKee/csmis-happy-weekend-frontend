@@ -80,7 +80,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'unauthorized', component: UnauthorizedComponent },
   { path: 'profile', component: AdminMainComponent},
- 
+
 { path: 'dashboard', component: AdminMainComponent , canActivate: [RoleGuard], data: { role: 'ADMIN' }},
   { path: 'employees', component: EmployeeListComponent , canActivate: [RoleGuard], data: { role: 'ADMIN' }},
   {
@@ -97,7 +97,7 @@ const routes: Routes = [
       { path: 'add', component: AddEmployeeComponent, canActivate: [RoleGuard], data: { role: 'ADMIN' } }
     ]
   },
-  
+
   {
     path: 'operator',
     children: [
