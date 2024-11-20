@@ -1,17 +1,56 @@
-
-.sidenav-toggler-inner{
-    display: block!important;
-  }
-  i{
-    color: #369;
-  }
-.signin{
-  font-size: 20px!important;
-  font-weight: 500!important;
-  color:#369;
+.navbar {
+  background: rgb(9, 57, 105); /* Deep blue background */
+  padding: 10px 20px;
 }
-.loginout{
-  font-size: 20px!important;
-  font-weight: 300!important;
-  color:#369;
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff !important;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  color: #fff;
+}
+
+.nav-link {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #f5b642 !important; /* Gold hover color */
+}
+
+.dropdown-menu {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.signin {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fc3; /* Gold color */
+}
+
+.sidenav-toggler-inner i {
+  font-size: 20px;
+  color: #fff;
+}
+
+
+img{
+  width: 55px;
+  height: 35px;
+  
+}
+
+.bange{
+  background-color: white;
 }
